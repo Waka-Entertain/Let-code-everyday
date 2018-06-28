@@ -19,3 +19,5 @@ class Solution:
             else:
                 ans += maps[s[i]]
         return ans
+
+print(Solution().romanToInt('CMXCIX'))
