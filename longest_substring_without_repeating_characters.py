@@ -49,10 +49,13 @@ class Solution:
                         visited[s[start]] = False
                         start += 1
                     start += 1
+                else:
+                    visited[char] = True
             except KeyError:
                 visited[char] = True
             longest = max(longest, i - start + 1)
+            print(longest)
         return longest
 
 if __name__ == '__main__':
-    Solution().lengthOfLongestSubstring("pwwkew")
+    print(Solution().lengthOfLongestSubstring1("qwnfenpglqdq"))
