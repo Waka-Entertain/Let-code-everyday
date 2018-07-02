@@ -40,5 +40,19 @@ class Solution:
 
         return len(temp_max)
 
+    def lengthOfLongestSubstring1(self, s):
+        longest, start, visited = 0, 0, {}
+        for i, char in enumerate(s):
+            try:
+                if visited[char]:
+                    while char != s[start]:
+                        visited[s[start]] = False
+                        start += 1
+                    start += 1
+            except KeyError:
+                visited[char] = True
+            longest = max(longest, i - start + 1)
+        return longest
+
 if __name__ == '__main__':
     Solution().lengthOfLongestSubstring("pwwkew")
