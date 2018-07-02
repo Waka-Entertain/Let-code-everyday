@@ -41,7 +41,7 @@ class Solution:
         return len(temp_max)
 
     def lengthOfLongestSubstring1(self, s):
-        longest, start, visited = 0, 0, {}
+        longest, start, visited = [], 0, {}
         for i, char in enumerate(s):
             try:
                 if visited[char]:
@@ -53,9 +53,8 @@ class Solution:
                     visited[char] = True
             except KeyError:
                 visited[char] = True
-            longest = max(longest, i - start + 1)
-            print(longest)
-        return longest
+            longest.append(i - start + 1)
+        return max(longest) if len(longest) else 0
 
 if __name__ == '__main__':
     print(Solution().lengthOfLongestSubstring1("qwnfenpglqdq"))
