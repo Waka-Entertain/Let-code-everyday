@@ -23,5 +23,23 @@ class Solution:
             cursor += 1
         return ''.join(converted)
 
+    def convert1(self, s, numRows):
+        if numRows == 1:
+            return s
 
-Solution().convert("PAYPALISHIRING", 3)
+        zigzag = ['' for _ in range(numRows)]
+        row, cursor = 0, 1
+        for char in s:
+            if row == 0:
+                cursor = 1
+            if row == numRows - 1:
+                cursor = -1
+            zigzag[row] += char
+            print(zigzag)
+            row += cursor
+        return ''.join(zigzag)
+
+
+if __name__ == "__main__":
+    print(Solution().convert("PAYPALISHIRING", 4))
+    print(Solution().convert1("PAYPALISHIRING", 4))
