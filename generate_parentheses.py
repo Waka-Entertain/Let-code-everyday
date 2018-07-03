@@ -27,7 +27,6 @@ class Solution:
             for left in self.generateParenthesis(i):
                 for right in self.generateParenthesis(n - 1 - i):
                     result.append('{}({})'.format(left, right))
-                    print(result)
         return result
 
 
