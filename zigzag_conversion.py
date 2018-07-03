@@ -32,11 +32,11 @@ class Solution:
         for char in s:
             if row == 0:
                 cursor = 1
-            if row == numRows - 1:
+            elif row == numRows - 1:
                 cursor = -1
             zigzag[row] += char
-            print(zigzag)
             row += cursor
+            
         return ''.join(zigzag)
 
 
