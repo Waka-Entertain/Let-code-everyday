@@ -29,5 +29,21 @@ class Solution:
                     result.append('{}({})'.format(left, right))
         return result
 
+class Solution2:
+    def generateParenthesis(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        if n == 0: return ['']
+        if n == 1: return ["()"]
 
-print(Solution().generateParenthesis(2))
+        result = []
+        for item in self.generateParenthesis(n-1):
+            result.append('({})'.format(item))
+            result.append('(){}'.format(item))
+            result.append('{}()'.format(item))
+        result.pop()
+        return result
+
+print(Solution2().generateParenthesis(6))
