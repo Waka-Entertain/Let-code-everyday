@@ -25,3 +25,6 @@ class Solution:
         :rtype: str
         """
         return str(int(num1) * int(num2))
+
+
+print(Solution().multiply2("36", "2"))
