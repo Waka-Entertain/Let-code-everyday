@@ -1,3 +1,7 @@
+package main
+
+import "fmt"
+
 func max(a , b int) int {
 	if a > b {
 		return a
@@ -16,4 +20,8 @@ func lengthOfLongestSubstring(s string) int {
 		lookup[string(s[i])] = i + 1
 	}
 	return ans
+}
+
+func main() {
+	fmt.Println(lengthOfLongestSubstring("asssff"))
 }
